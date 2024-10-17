@@ -1,0 +1,91 @@
+@keyframes rainbow {
+    0% {
+        background-color: red;
+        filter: hue-rotate(0deg);
+    }
+
+    14% {
+        background-color: orange;
+        filter: hue-rotate(60deg);
+    }
+
+    28% {
+        background-color: yellow;
+        filter: hue-rotate(120deg);
+    }
+
+    42% {
+        background-color: green;
+        filter: hue-rotate(180deg);
+    }
+
+    57% {
+        background-color: blue;
+        filter: hue-rotate(240deg);
+    }
+
+    71% {
+        background-color: indigo;
+        filter: hue-rotate(300deg);
+    }
+
+    85% {
+        background-color: violet;
+        filter: hue-rotate(360deg);
+    }
+
+    100% {
+        background-color: red;
+        filter: hue-rotate(0deg);
+    }
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    animation: rainbow 10s infinite;
+}
+
+#status-text,
+.loading-text {
+    user-select: none; /* Prevent text selection */
+    pointer-events: none; /* Prevent interaction with the text */
+}
+
+#status-text {
+    user-select: none; /* Prevent text selection */
+    position: absolute; /* Absolute positioning to overlap the canvas */
+    top: 20px; /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 6em; /* Increase the font size */
+    color: #00ff00; /* Make sure the text color contrasts with the canvas */
+    text-align: center;
+    z-index: 10; /* Ensure the text is above the canvas */
+    pointer-events: none; /* Prevent the text from blocking mouse events */
+}
+
+#canvas {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1; /* Ensure the canvas is below the text */
+    position: absolute; /* Allow the canvas to fill the entire viewport */
+    top: 0;
+    left: 0;
+}
+
+#targetBottom {
+    z-index: 1; /* Below the headphone image */
+}
+
+#targetTop {
+    z-index: 3; /* Above the headphone image */
+}
+
+/* Adjust the headphone image through JavaScript to set z-index dynamically */
+
