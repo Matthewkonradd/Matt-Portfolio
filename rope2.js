@@ -216,7 +216,7 @@ function playMusic() {
 window.addEventListener('mousedown', playMusic);
 window.addEventListener('touchstart', playMusic);
 
-window.onload = function () {
+window.onload = function() {
     init();
 };
 
